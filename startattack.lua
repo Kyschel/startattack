@@ -1,8 +1,16 @@
+-- startattack.lua
+--
+-- Author: Kyschel
+-- Description: Locates player attack action on actionbar and starts/stops attack on command (/startattack, /stopattack)
+--
+-- GlobalVariablesPerCharacter from startattack.toc:
+-- AttackActionSlot
+
 SLASH_STARTATTACK1 = "/startattack"
 SLASH_STOPATTACK1 = "/stopattack"
 
 local function verifyAttackSlot(s)
-    return (IsAttackAction(s) and GetActionTexture(s) == GetInventoryItemTexture("player",16))
+    return (IsAttackAction(s) and GetActionTexture(s) == GetInventoryItemTexture("player", 16))
 end
 
 local function findAttackSlot()
@@ -40,5 +48,5 @@ function stopattack()
     startAttack(false)
 end
 
-SlashCmdList.STARTATTACK = startattack;
-SlashCmdList.STOPATTACK = stopattack;
+SlashCmdList.STARTATTACK = startattack
+SlashCmdList.STOPATTACK = stopattack
