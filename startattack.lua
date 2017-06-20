@@ -27,14 +27,8 @@ local function startAttack(start)
         return
     end        
     
-    if start then
-        if not IsCurrentAction(AttackActionSlot) then
-            UseAction(AttackActionSlot)
-        end
-    else
-        if IsCurrentAction(AttackActionSlot) then
-            UseAction(AttackActionSlot)
-        end
+    if (start and not IsCurrentAction(AttackActionSlot)) or (not start and IsCurrentAction(AttackActionSlot)) then
+        UseAction(AttackActionSlot)
     end
 end
 
