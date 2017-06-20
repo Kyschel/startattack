@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: startattack |cFF00FFFF-Kyschel-|r
+## Notes: /startattack (and /stopattack) in vanilla.
+## Author: Kyschel (Kyschel <SALAD BAKERS> Anathema)
+## Version: 1.0.0
+## SavedVariablesPerCharacter: AttackActionSlot
+
+Startattack.lua
