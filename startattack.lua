@@ -23,7 +23,7 @@ local function startAttack(start)
     end
     
     if AttackActionSlot == nil then
-        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFFStartattack|r: No attack action found on your actionbars!")
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFFstartattack|r: No attack action found on your actionbars!")
         return
     end        
     
