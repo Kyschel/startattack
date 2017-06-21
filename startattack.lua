@@ -10,30 +10,26 @@ SLASH_STARTATTACK1 = "/startattack"
 SLASH_STOPATTACK1 = "/stopattack"
 
 local function verifyAttackSlot(s)
-    return (IsAttackAction(s) and GetActionTexture(s) == GetInventoryItemTexture("player", 16))
+    return IsAttackAction(s)
 end
 
 local function findAttackSlot()
-    local actionslot = nil
     for i=1,120 do
         if verifyAttackSlot(i) then
-            actionslot = i
+            return i
         end
     end
-    return actionslot
 end
 
 local function startAttack(start)
-    if AttackActionSlot == nil then
+    if not AttackActionSlot or not verifyAttackSlot(AttackActionSlot) then
         AttackActionSlot = findAttackSlot()
-    elseif not verifyAttackSlot(AttackActionSlot) then
-        AttackActionSlot = findAttackSlot()
-    end
-    
-    if AttackActionSlot == nil then
-        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFFstartattack|r: No attack action found on your actionbars!")
-        return
-    end        
+        
+        if not AttackActionSlot then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFFstartattack|r: No attack action found on your actionbars!")
+            return
+        end  
+    end   
     
     if (start and not IsCurrentAction(AttackActionSlot)) or (not start and IsCurrentAction(AttackActionSlot)) then
         UseAction(AttackActionSlot)
