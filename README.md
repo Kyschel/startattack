@@ -1,3 +1,5 @@
+[>> Download <<](https://github.com/Kyschel/startattack/releases/download/v0.1/startattack.zip)
+
 ## startattack
 /startattack doesn't exist in 1.12.1, hence this addon.
 ## Examples
